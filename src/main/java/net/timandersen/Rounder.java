@@ -4,15 +4,12 @@ package net.timandersen;
 public class Rounder {
 
     public Integer roundToNearestHundred(Integer number) {
-
-
-        if (number < 150) {
-            return 100;
-        } else if (number > 150 && number < 250) {
-            return 200;
+        int rounded = number / 100;
+        if (number % 100 >= 50) {
+            return rounded * 100 + 100;
+        } else {
+            return rounded * 100;
         }
-        
-        return 500;
     }
 
 }
